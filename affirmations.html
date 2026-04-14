@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>affirmations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="pixel-stars"></div>
+  <header class="site-header">
+  <nav class="nav">
+    <a class="logo" href="index.html" data-i18n="logo">nina's space</a>
+    <div class="nav-links">
+      <a href="index.html"  data-i18n="navHome">home</a>
+      <a href="meditations.html"  data-i18n="navMeditations">meditations</a>
+      <a href="affirmations.html" class="active" data-i18n="navAffirmations">affirmations</a>
+      <a href="games.html"  data-i18n="navGames">games</a>
+    </div>
+    <div class="lang-wrap">
+      <label for="langSelect" data-i18n="langLabel">language</label>
+      <select id="langSelect" aria-label="language switcher">
+        <option value="en">english</option>
+        <option value="sr">srpski</option>
+      </select>
+      <label for="soundSelect" data-i18n="soundLabel">sound</label>
+      <select id="soundSelect" class="sound-select" aria-label="ambient type">
+        <option value="ambient" data-i18n="soundAmbient">ambient</option>
+        <option value="rain" data-i18n="soundRain">rain sounds</option>
+        <option value="fire" data-i18n="soundFire">fire sounds</option>
+        <option value="wind" data-i18n="soundWind">wind sounds</option>
+        <option value="trees" data-i18n="soundTrees">trees sounds</option>
+        <option value="lofi" data-i18n="soundLofi">lo-fi music</option>
+      </select>
+      <button id="audioToggle" class="audio-btn" type="button" data-i18n="audioToggleOff">ambient off</button>
+    </div>
+  </nav>
+</header>
+  <main>
+    <section class="hero">
+      <h1 data-i18n="affTitle">affirmations</h1>
+      <p data-i18n="affSubtitle">for slow breathing and soft thoughts.</p>
+      <div class="kitty-strip" aria-hidden="true">
+        <img src="assets/pixel-kitty-1.svg" alt="pixel kitty bow">
+        <img src="assets/pixel-kitty-2.svg" alt="pixel kitty friend">
+      </div>
+    </section>
+    <section class="breathing-widget hero">
+      <h2 data-i18n="breathTitle">breathing widget</h2>
+      <p data-i18n="breathText">follow the bubble and breathe slowly.</p>
+      <div class="breath-visual" id="breathBubble"></div>
+      <div class="breath-meta">
+        <p id="breathPhase" data-i18n="breathReady">ready</p>
+        <p id="breathCount"></p>
+      </div>
+      <button class="tiny-btn" id="breathToggle" type="button" data-i18n="breathStart">start breathing</button>
+    </section>
+    <section class="affirmation-layout">
+      <article class="affirmation-box">
+        <h2 data-i18n="affTopicSelfLove">self love</h2>
+        <ul class="affirmation-list">
+          <li data-i18n="affSelf1">i am worthy of love exactly as i am.</li>
+          <li data-i18n="affSelf2">i speak to myself with kindness.</li>
+          <li data-i18n="affSelf3">i am proud of my growth.</li>
+          <li data-i18n="affSelf4">i deserve soft and beautiful things.</li>
+        </ul>
+      </article>
+      <article class="affirmation-box">
+        <h2 data-i18n="affTopicAnxiety">anxiety relief</h2>
+        <ul class="affirmation-list">
+          <li data-i18n="affAnx1">i am safe in this moment.</li>
+          <li data-i18n="affAnx2">my body can relax one breath at a time.</li>
+          <li data-i18n="affAnx3">i can pause without guilt.</li>
+          <li data-i18n="affAnx4">this feeling will pass, and i will be okay.</li>
+        </ul>
+      </article>
+      <article class="affirmation-box">
+        <h2 data-i18n="affTopicMoney">money & abundance</h2>
+        <ul class="affirmation-list">
+          <li data-i18n="affMoney1">money flows to me in calm and aligned ways.</li>
+          <li data-i18n="affMoney2">i am open to abundance every day.</li>
+          <li data-i18n="affMoney3">i deserve financial stability and ease.</li>
+          <li data-i18n="affMoney4">new opportunities find me at the right time.</li>
+        </ul>
+      </article>
+      <article class="affirmation-box">
+        <h2 data-i18n="affTopicHealth">health</h2>
+        <ul class="affirmation-list">
+          <li data-i18n="affHealth1">my body deserves rest, care, and patience.</li>
+          <li data-i18n="affHealth2">i nourish myself with love.</li>
+          <li data-i18n="affHealth3">healing is happening in me every day.</li>
+          <li data-i18n="affHealth4">my mind and body are becoming stronger and calmer.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <footer class="footer" data-i18n="footer">made with love and pink pixels.</footer>
+  <script src="app.js"></script>
+</body>
+</html>

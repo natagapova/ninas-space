@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="pixel-stars"></div>
+  <header class="site-header">
+  <nav class="nav">
+    <a class="logo" href="index.html" data-i18n="logo">nina's space</a>
+    <div class="nav-links">
+      <a href="index.html"  data-i18n="navHome">home</a>
+      <a href="meditations.html"  data-i18n="navMeditations">meditations</a>
+      <a href="affirmations.html"  data-i18n="navAffirmations">affirmations</a>
+      <a href="games.html" class="active" data-i18n="navGames">games</a>
+    </div>
+    <div class="lang-wrap">
+      <label for="langSelect" data-i18n="langLabel">language</label>
+      <select id="langSelect" aria-label="language switcher">
+        <option value="en">english</option>
+        <option value="sr">srpski</option>
+      </select>
+      <label for="soundSelect" data-i18n="soundLabel">sound</label>
+      <select id="soundSelect" class="sound-select" aria-label="ambient type">
+        <option value="ambient" data-i18n="soundAmbient">ambient</option>
+        <option value="rain" data-i18n="soundRain">rain sounds</option>
+        <option value="fire" data-i18n="soundFire">fire sounds</option>
+        <option value="wind" data-i18n="soundWind">wind sounds</option>
+        <option value="trees" data-i18n="soundTrees">trees sounds</option>
+        <option value="lofi" data-i18n="soundLofi">lo-fi music</option>
+      </select>
+      <button id="audioToggle" class="audio-btn" type="button" data-i18n="audioToggleOff">ambient off</button>
+    </div>
+  </nav>
+</header>
+  <main>
+    <section class="hero">
+      <h1 data-i18n="gamesTitle">games</h1>
+      <p data-i18n="gamesSubtitle">very simple pixel fun.</p>
+      <div class="kitty-strip" aria-hidden="true">
+        <img src="assets/pixel-kitty-1.svg" alt="pixel kitty bow">
+        <img src="assets/pixel-kitty-2.svg" alt="pixel kitty friend">
+      </div>
+    </section>
+    <section class="breathing-widget hero">
+      <h2 data-i18n="breathTitle">breathing widget</h2>
+      <p data-i18n="breathText">follow the bubble and breathe slowly.</p>
+      <div class="breath-visual" id="breathBubble"></div>
+      <div class="breath-meta">
+        <p id="breathPhase" data-i18n="breathReady">ready</p>
+        <p id="breathCount"></p>
+      </div>
+      <button class="tiny-btn" id="breathToggle" type="button" data-i18n="breathStart">start breathing</button>
+    </section>
+    <section class="games-grid">
+      <article class="game-box">
+        <h2 data-i18n="game7Title">kitty runner</h2>
+        <p data-i18n="game7Text">jump over the bow obstacles.</p>
+        <div class="runner-track" id="runnerTrack">
+          <img class="runner-kitty" id="runnerKitty" src="assets/pixel-kitty-runner.svg" alt="pixel hello kitty runner">
+          <img class="runner-obstacle" id="runnerObstacle" src="assets/pixel-bow.svg" alt="pixel bow obstacle">
+        </div>
+        <div class="inline-row">
+          <button class="tiny-btn" id="runnerStart" type="button" data-i18n="game7Start">start run</button>
+          <button class="tiny-btn" id="runnerJump" type="button" data-i18n="game7Jump">jump</button>
+        </div>
+        <p><span data-i18n="game7Score">distance</span>: <span id="runnerScore">0</span></p>
+        <p id="runnerStatus" data-i18n="game7StatusReady">ready to run</p>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game8Title">petal pop</h2>
+        <p data-i18n="game8Text">pop petals before time runs out.</p>
+        <button class="tiny-btn" id="petalStart" type="button" data-i18n="game8Start">start petals</button>
+        <p><span data-i18n="game8Score">petals</span>: <span id="petalScore">0</span></p>
+        <p><span data-i18n="game8Time">time</span>: <span id="petalTime">12</span></p>
+        <div class="petal-box" id="petalBox"></div>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game2Title">kitty match</h2>
+        <p data-i18n="game2Text">find all matching pairs.</p>
+        <button class="tiny-btn" id="resetKitty" type="button" data-i18n="game2Reset">reset</button>
+        <p><span data-i18n="game2Moves">moves</span>: <span id="kittyMoves">0</span></p>
+        <p id="kittyWon" data-i18n="game2Won" hidden>you did it.</p>
+        <div class="kitty-board" id="kittyBoard"></div>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game4Title">rock paper scissors</h2>
+        <p data-i18n="game4Text">pick one and play against kitty.</p>
+        <div class="rps-wrap">
+          <div class="rps-kitty">
+            <img id="rpsKitty" src="assets/pixel-kitty-runner.svg" alt="pixel hello kitty rps">
+          </div>
+          <div class="rps-hand">
+            <img id="rpsHand" src="assets/pixel-hand-idle.svg" alt="pixel white hand">
+          </div>
+        </div>
+        <p id="rpsKittyMood" data-i18n="game4KittyReady">kitty is ready</p>
+        <div class="inline-row">
+          <button class="tiny-btn" type="button" data-rps="rock" data-i18n="game4Rock">rock</button>
+          <button class="tiny-btn" type="button" data-rps="paper" data-i18n="game4Paper">paper</button>
+          <button class="tiny-btn" type="button" data-rps="scissors" data-i18n="game4Scissors">scissors</button>
+        </div>
+        <p id="rpsResult"></p>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game9Title">kitty reflex</h2>
+        <p data-i18n="game9Text">tap the kitty as soon as she appears.</p>
+        <button class="tiny-btn" id="reflexStart" type="button" data-i18n="game9Start">start reflex</button>
+        <p><span data-i18n="game9Best">best</span>: <span id="reflexBest">-</span> ms</p>
+        <p id="reflexStatus" data-i18n="game9Ready">wait for kitty...</p>
+        <button class="tap-burst-btn" id="reflexTap" type="button" disabled>
+          <img id="reflexIcon" src="assets/pixel-heart.svg" alt="pixel reflex icon">
+        </button>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game6Title">speed tap</h2>
+        <p data-i18n="game6Text">tap as fast as you can in 10 seconds.</p>
+        <button class="tiny-btn" id="speedTapBtn" type="button" data-i18n="game6Btn">start 10s</button>
+        <p><span data-i18n="game6Taps">taps</span>: <span id="speedTapCount">0</span></p>
+        <p><span data-i18n="game6Time">time</span>: <span id="speedTapTime">10</span></p>
+        <button class="tap-burst-btn" id="speedTapArea" type="button" data-i18n="game6TapBtn">tap me</button>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game3Title">number guess</h2>
+        <p data-i18n="game3Text">guess the secret number from 1 to 20.</p>
+        <div class="inline-row">
+          <input id="guessInput" class="mini-input" type="number" min="1" max="20" data-i18n-placeholder="game3Placeholder" placeholder="type number">
+          <button class="tiny-btn" id="guessBtn" type="button" data-i18n="game3Btn">guess</button>
+        </div>
+        <p id="guessHint"></p>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game1Title">calm click</h2>
+        <p data-i18n="game1Text">click to fill the calm meter before time ends.</p>
+        <div class="inline-row">
+          <label for="calmSetTime" data-i18n="game1SetTime">set time</label>
+          <input id="calmSetTime" class="mini-input" type="number" min="2" max="60" value="10">
+        </div>
+        <button class="tiny-btn" id="startCalmClick" type="button" data-i18n="game1Btn">start round</button>
+        <p><span data-i18n="game1Score">score</span>: <span id="calmScore">0</span></p>
+        <p><span data-i18n="game1Time">time</span>: <span id="calmTime">10</span></p>
+        <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+      </article>
+
+      <article class="game-box">
+        <h2 data-i18n="game5Title">lucky message</h2>
+        <p data-i18n="game5Text">tap for a tiny soft message.</p>
+        <button class="tiny-btn" id="luckyBtn" type="button" data-i18n="game5Btn">show message</button>
+        <p id="luckyText"></p>
+      </article>
+    </section>
+  </main>
+  <footer class="footer" data-i18n="footer">made with love and pink pixels.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
